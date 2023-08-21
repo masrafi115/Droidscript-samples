@@ -1,0 +1,7 @@
+<sample Show app name>
+function OnStart()
+{
+    <b>var name = app.GetAppName();</b>
+    app.Alert( name );
+}
+</sample>

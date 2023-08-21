@@ -1,0 +1,7 @@
+<sample Show Device IP>
+function OnStart()
+{
+    var ip = app.GetIPAddress();
+    app.Alert( ip );
+}
+</sample>

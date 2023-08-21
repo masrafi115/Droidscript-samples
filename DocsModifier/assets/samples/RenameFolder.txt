@@ -1,0 +1,13 @@
+<sample Rename>
+function OnStart()
+{
+	<b>app.RenameFolder( "/sdcard/MyFolder", "/sdcard/YourFolder" );</b>
+}
+</sample>
+
+<sample Move>
+function OnStart()
+{
+	<b>app.RenameFolder( "/sdcard/MyFolder", "/sdcard/DroidScript/MyFolder" );</b>
+}
+</sample>

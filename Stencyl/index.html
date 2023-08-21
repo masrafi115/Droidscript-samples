@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<!-- This is our slightly modified version of the game's original index.html file -->
+
+<html lang="en">
+<head>
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	
+	<title>AlienApproach</title>
+	
+	<script type="text/javascript" src="lib/soundjs.min.js"></script>
+	<script type="text/javascript" src="AlienApproach.js_"></script>
+	
+	<script>
+        function KeyPress( keyCode, wait ) 
+        {
+            KeyEvent( 'keydown', keyCode );
+            setTimeout( function(){ KeyEvent('keyup',keyCode); }, wait?wait:0 );
+        }
+        
+        function KeyEvent( mode, code )
+        {
+            var event = document.createEvent('Event'); 
+		    event.initEvent(mode, true, true); 
+            event.keyCode = code;
+            window.dispatchEvent(event);
+        }
+	</script>
+	
+	<style>
+		html,body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+		#openfl-content { background: #666666; width: 100%; height: 100%; }
+	</style>
+	
+</head>
+<body>
+	
+	<div id="openfl-content"></div>
+	
+	<script type="text/javascript">
+	    lime.embed ("openfl-content", 640, 480, "000000");
+	</script>
+	
+</body>
+</html>

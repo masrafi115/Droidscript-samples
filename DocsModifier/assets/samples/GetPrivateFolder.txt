@@ -1,0 +1,7 @@
+<sample Show >
+function OnStart()
+{
+    <b>var path = app.GetPrivateFolder( "temp" );</b>
+    app.Alert( path );
+}
+</sample>

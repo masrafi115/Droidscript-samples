@@ -1,0 +1,10 @@
+<sample Example>
+function OnStart()
+{
+    <b>if(app.FileExists("myFile.txt")) {
+        app.ShowPopup("myFile exists!");
+    } else {
+        app.ShowPopup("myFile does not exist!");
+    }</b>
+}
+</sample>

@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>WebSocket Demo</title>
+
+<script>
+
+var count = 0;
+
+//Connect to server via web sockets.
+function Connect()
+{
+	//Check web sockets are supported.
+	if (!window.WebSocket) 
+	{
+		alert("WebSocket not supported by this browser");
+		return;
+	}
+	
+	//Open web socket to phone.
+	ws = new WebSocket( "ws://"+window.location.host );
+	ws.onopen = ws_onopen;
+	ws.onmessage = ws_onmessage;
+	ws.onclose = ws_onclose;
+	ws.onerror = ws_onerror;
+}
+
+//Send a message to the server.
+function Send()
+{
+	ws.send( "Hello " + count++ );
+}
+
+//Handle socket open.
+function ws_onopen() 
+{
+	id_info.innerHTML = "Socket Open";
+}
+
+//Handle messages from phone.
+function ws_onmessage( msg ) 
+{
+	id_info.innerHTML = msg.data;
+}
+
+//Other websocket callbacks.
+function ws_onclose() { id_info.innerHTML = "Socket Closed"; }
+function ws_onerror(e) { id_info.innerHTML = "Socket Error: " + e.data; }
+</script>
+</head>
+
+<body>
+ <h2>DroidScript WebSocket Demo</h2>
+ 
+ <div id="id_info">Ready</div>
+ <br><br>
+ <button onclick="Connect()">Connect</button>
+ <button onclick="Send()">Send Message</button>
+  
+</body>
+</html>
